@@ -28,10 +28,11 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-    "lint-staged": {
+  "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "tsc --pretty --noEmit"
     ],
     "*.{json,css,md}": [
       "prettier --write"
