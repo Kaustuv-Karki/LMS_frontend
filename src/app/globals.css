@@ -2,32 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 210 20% 98%;
+    --foreground: 220 10% 30%;
+    --card: 210 20% 98%;
+    --card-foreground: 220 10% 30%;
+    --popover: 210 20% 98%;
+    --popover-foreground: 220 10% 30%;
+    --primary: 150 50% 45%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 200 15% 90%;
+    --secondary-foreground: 150 50% 45%;
+    --muted: 200 15% 90%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 200 15% 90%;
+    --accent-foreground: 150 50% 45%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 200 15% 85%;
+    --input: 200 15% 85%;
+    --ring: 220 10% 30%;
+    --radius: 0.5rem;
+    --chart-1: 150 50% 45%;
+    --chart-2: 160 55% 45%;
+    --chart-3: 30 75% 55%;
+    --chart-4: 260 60% 55%;
+    --chart-5: 320 70% 50%;
+  }
+
+  .dark {
+    --background: 220 10% 20%;
+    --foreground: 210 20% 98%;
+    --card: 220 10% 20%;
+    --card-foreground: 210 20% 98%;
+    --popover: 220 10% 20%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 150 50% 45%;
+    --primary-foreground: 220 10% 20%;
+    --secondary: 210 10% 30%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 210 10% 30%;
+    --muted-foreground: 220 15% 70%;
+    --accent: 210 10% 30%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 210 10% 30%;
+    --input: 210 10% 30%;
+    --ring: 220 15% 85%;
+    --chart-1: 150 45% 40%;
+    --chart-2: 160 50% 40%;
+    --chart-3: 30 70% 50%;
+    --chart-4: 260 55% 50%;
+    --chart-5: 320 65% 45%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
